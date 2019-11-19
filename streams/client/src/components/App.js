@@ -6,7 +6,21 @@ const PageOne = () => {
 };
 
 const PageTwo = () => {
-  return <div>PageTwo</div>;
+  return (
+    <div>
+      <div>PageTwo</div>
+      <button>Click me!</button>
+    </div>
+  );
+};
+
+const PageThree = () => {
+  return (
+    <div>
+      <div>PageThree</div>
+      <button>Save</button>
+    </div>
+  );
 };
 
 const App = () => {
@@ -14,8 +28,9 @@ const App = () => {
     <div>
       <BrowserRouter>
         <div>
-          <Route path="/" exact component={PageOne} />
-          <Route path="/pagetwo" exact component={PageTwo} />
+          <Route path="/" component={PageOne} />
+          <Route path="/page" component={PageTwo} />
+          <Route path="/page/3" component={PageThree} />
         </div>
       </BrowserRouter>
     </div>
