@@ -1,24 +1,20 @@
 import React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Link } from "react-router-dom";
 
 const PageOne = () => {
-  return <div>PageOne</div>;
+  return (
+    <div>
+      <div>PageOne</div>
+      <Link to="/pagetwo">Go to Page 2</Link>
+    </div>
+  );
 };
 
 const PageTwo = () => {
   return (
     <div>
       <div>PageTwo</div>
-      <button>Click me!</button>
-    </div>
-  );
-};
-
-const PageThree = () => {
-  return (
-    <div>
-      <div>PageThree</div>
-      <button>Save</button>
+      <Link to="/">Go back to Page 1</Link>
     </div>
   );
 };
@@ -28,9 +24,8 @@ const App = () => {
     <div>
       <BrowserRouter>
         <div>
-          <Route path="/" component={PageOne} />
-          <Route path="/page" component={PageTwo} />
-          <Route path="/page/3" component={PageThree} />
+          <Route path="/" exact component={PageOne} />
+          <Route path="/pagetwo" component={PageTwo} />
         </div>
       </BrowserRouter>
     </div>
